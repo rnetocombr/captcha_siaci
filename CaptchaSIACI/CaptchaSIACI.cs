@@ -81,7 +81,7 @@ namespace CaptchaSIACI
         }
 
 
-        public List<string> QuebraCaptcha(string arquivo)
+        public string QuebraCaptcha(string arquivo)
         {
             // Lista que hospedará o resultado
             List<string> resultado = new List<string>();
@@ -148,7 +148,7 @@ namespace CaptchaSIACI
                 }
             }
 
-            return resultado;
+            return String.Join("", resultado);
         }
     }
 }
