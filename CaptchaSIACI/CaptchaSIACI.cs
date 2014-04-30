@@ -11,7 +11,7 @@ using System.Collections.Specialized;
 
 namespace CaptchaSIACI
 {
-    class CaptchaSIACI
+    public class CaptchaSIACI
     {
         List<KeyValuePair<string, List<string>>> representacoes = new List<KeyValuePair<string, List<string>>>();
 
@@ -86,7 +86,7 @@ namespace CaptchaSIACI
             // Lista que hospedará o resultado
             List<string> resultado = new List<string>();
 
-            List<string> linhas = new List<string>(File.ReadAllLines(arquivo));
+            List<string> linhas = new List<string>(arquivo.Split(new string[] { Environment.NewLine }, StringSplitOptions.None));
             
             // Trata todas as linhas para que tenham 80 colunas
             IEnumerable<string> linhasTratadas = linhas.Select(f => f.PadRight(80, ' '));
